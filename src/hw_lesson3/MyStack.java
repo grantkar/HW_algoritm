@@ -23,8 +23,7 @@ public class MyStack <T>{
 
     public void push(T item) {
         if (isFull()) {
-            //реализовать расширение массива
-            throw new StackOverflowError("Стек заполнен");
+            reCapacity(capacity*2); // при заполнении внутреннего массива, увеличиваем его в 2 раза
         }
         list[size]= item;
         size++;
@@ -62,4 +61,6 @@ public class MyStack <T>{
         System.arraycopy(list, 0, tempArr, 0, size);
         list = tempArr;
     }
+
+
 }

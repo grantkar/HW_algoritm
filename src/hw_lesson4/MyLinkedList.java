@@ -44,7 +44,8 @@ public class MyLinkedList <T> implements Iterable<T>{
 
         @Override
         public T previous() {
-            return null;
+            current.setPrev(current);
+            return current.getValue();
         }
 
         @Override

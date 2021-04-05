@@ -41,8 +41,9 @@ public class LinearProbingHashMap <Key, Value> {
     }
 
     public void put(Key key, Value value){
-        // проверка на прввышение лоад фактора. Либо просаем эксепшн либо
-        // перехиширование на массив размером больше, но простое число
+        if ((size / capacity) * 100 >= 75) {
+            throw new ArrayIndexOutOfBoundsException("Лоуд фактор уже превышен");
+        }
         checkKeyNotNull(key);
         int i = hash(key);
         int step = 1;

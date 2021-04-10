@@ -19,13 +19,15 @@ public class Main {
 //            chm.put(random.nextInt(100), "");
 //        }
 
+//        System.out.println(chm.delete(2,"two"));
 //        System.out.println(chm);
 
-        LinearProbingHashMap<Integer, String> lphm = new LinearProbingHashMap<>(19);
+        LinearProbingHashMap<Integer, String> lphm = new LinearProbingHashMap<>(10);
         lphm.put(1, "one");
         lphm.put(2, "two");
         lphm.put(3, "three");
         lphm.put(2, "twosdfsdf");
+
         System.out.println(lphm.get(2));
 
     }

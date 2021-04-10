@@ -75,6 +75,16 @@ public class ChainingHashMap <Key, Value> {
         return null;
     }
 
+    public boolean delete (Key key, Value value){
+
+        checkKeyNotNull(key);
+        if (st[key.hashCode()].removeIf(st -> st.value.equals(value))) {
+            size--;
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -88,5 +98,4 @@ public class ChainingHashMap <Key, Value> {
         return sb.toString();
     }
 
-    //реализовать метод удаления.
 }
